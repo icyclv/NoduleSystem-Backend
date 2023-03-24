@@ -1,4 +1,5 @@
 # 工程简介
+肺结节分析系统Java服务端
 
-# 延伸阅读
+需要配置MySql、Minio、RabbitMq
 
