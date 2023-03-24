@@ -1,0 +1,40 @@
+server:
+  port: 8082
+spring:
+  application:
+        name: NoduleSystem
+
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.159.188:3306/NoduleSystem?useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+  jackson:
+    default-property-inclusion: non_null # JSON处理时忽略非空字段
+  rabbitmq:
+    host: 192.168.159.188
+    port: 5672
+    username: admin
+    password: 123
+    listener:
+      direct:
+        acknowledge-mode: AUTO
+        retry:
+          enabled: true
+
+minio:
+  endpoint: http://192.168.159.188:9000
+  accessKey: root
+  secretKey: chang2001
+  bucketName: medical-images
+
+mybatis-plus:
+  type-aliases-package: com.neu.nodulesystem.entity
+logging:
+  level:
+    com.neu.nodulesystem: debug
+
